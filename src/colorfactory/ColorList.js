@@ -14,10 +14,10 @@ const ColorList = ({ colors }) => {
             <div>
                 <h3>Please select a color</h3>
                 <ul>
-                {colors.map(color => {<li>
+                {colors.map(color => (<li>
                                     <Link to={`/colors/${color.name}`}>
                                         {color.name}
-                                    </Link></li>}
+                                    </Link></li>)
                                     )}
                 </ul>
                 

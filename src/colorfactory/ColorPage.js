@@ -1,13 +1,22 @@
 import {Link, useParams} from "react-router-dom";
+import { useNavigate, redirect } from "react-router-dom";
+
 
 
 const ColorPage = ({colors}) => {
 
     const params = useParams();
     const colorName = params.color;
+    const navigate = useNavigate();
+    
 
-    const {name, color} = colors.find(color => color.name === colorName);
+    const colorObj = colors.find(color => color.name === colorName);
 
+    if(!colorObj) {
+        redirect("/colors");
+        return;
+    }
+    const {name, color} = colorObj;
     return (
         <div style={{backgroundColor: color}}>
             <h1>THIS IS {name}.</h1>

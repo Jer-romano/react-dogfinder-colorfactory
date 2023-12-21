@@ -18,7 +18,7 @@ const ColorRoutes = () => {
         <Routes>
             <Route path="/colors" element={<ColorList colors={colors}/>}/>
             <Route path="/colors/new" element={<NewColorForm addColor={addColor}/>}/>
-            <Route path="/colors/:color" element={<ColorPage/>} colors={colors}/>
+            <Route path="/colors/:color" element={<ColorPage colors={colors}/>} />
             <Route path="*" element={<ColorList colors={colors}/>}/>
         </Routes>
     );
